@@ -134,16 +134,16 @@ if __name__ == '__main__':
     # Search scenes 
     # If you don't have a scenes text file that you can use scene-search to identify scenes you're interested in
     # https://m2m.cr.usgs.gov/api/docs/reference/#scene-search
-    # payload = { 
-    #             'datasetName' : '', # dataset alias
-    #             'maxResults' : 10, # max results to return
-    #             'startingNumber' : 1, 
-    #             'sceneFilter' : {} # scene filter
-    #           }
+    payload = { 
+                'datasetName' : '', # dataset alias
+                'maxResults' : 10, # max results to return
+                'startingNumber' : 1, 
+                'sceneFilter' : {} # scene filter
+              }
     
-    # results = sendRequest(serviceUrl + "scene-search", payload, apiKey)  
-    # for result in results:
-    #     entityIds.append(result['entityId'])
+    results = sendRequest(serviceUrl + "scene-search", payload, apiKey)  
+    for result in results:
+        entityIds.append(result['entityId'])
     
     # Add scenes to a list
     listId = f"temp_{datasetName}_list" # customized list id
